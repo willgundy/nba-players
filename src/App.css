@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+
+.playerCard {
+  width: 20vw;
+  margin: 20px;
+  padding: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  align-items: center;
+}
+
+.playerCard:hover {
+  box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.5);
+  transform: scale(1.1);
+}
+
+
+.playerContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
