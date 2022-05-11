@@ -18,7 +18,7 @@ export default function PlayerDetail() {
 
     async function getJSONData() {
 
-      if (playerInfo.nbaPlayerDrafted) {
+      if (playerInfo.nbaPlayerDrafted) { 
 
         const jsonBlob = JSON.parse(playerInfo.nbaPlayerDrafted.draft.replace(/'/g, '"'));
 
