@@ -38,8 +38,7 @@ export default function PlayerDetail() {
 
   return (
     <div>
-      {playerInfo &&       
-      <><img 
+      <img 
         src={`https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/${playerInfo.personId}.png`}
         onError={(e) => {
           e.onError = null;
@@ -83,8 +82,7 @@ export default function PlayerDetail() {
           <h3>{playerInfo.nbaPlayerDrafted.yearsPro}</h3>
         </label>
         <h3>{draftedTeam.fullName}</h3>
-      </div></>}
-
+      </div>
     </div>
   );
 }
