@@ -2,21 +2,43 @@ import { client } from './client';
 
 
 export async function getNBAPlayers(from = 0, to = 20, perPage = 20) {
-  const response = await client 
-    .from('nba-players')
-    .select(`*, nba_team (*)`, { count: 'exact' })
+  const { body, count } = await client 
+    .from('nbaPlayers')
+    .select(`*, nbaTeam (*)`, { count: 'exact' })
     .range(from, to);
 
-  const lastPage = Math.ceil(response.count / perPage);
+  const lastPage = Math.ceil(count / perPage);
     
-  return { ...response, lastPage };
+  return { body, lastPage };
 }
 
 export async function getSinglePlayer(id) {
-  const response = await client 
-    .from('nba-players')
-    .select(`*, nba_team (*)`)
-    .match({ personId: id });
+  const { body } = await client 
+    .from('nbaPlayers')
+    .select(`*, nbaTeam (*), nbaPlayerDrafted (*)`)
+    .match({ personId: id })
+    .single();
     
-  return { response };
+  return body;
+}
+
+export async function getSingleTeam(id) {
+  const { body } = await client 
+    .from('nbaTeam')
+    .select('*')
+    .match({ teamId: id })
+    .single();
+    
+  return body;
+}
+
+export async function getNBATeams(from = 0, to = 20, perPage = 20) {
+  const { body, count } = await client 
+    .from('nbaTeam')
+    .select(`*`, { count: 'exact' })
+    .range(from, to);
+  
+  const lastPage = Math.ceil(count / perPage);
+      
+  return { body, lastPage };
 }

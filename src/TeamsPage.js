@@ -1,35 +1,35 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import { getNBAPlayers } from './services/fetch-utils';
-import PlayerCardList from './PlayerCardList';
+import { getNBATeams } from './services/fetch-utils';
+import TeamCardList from './TeamCardList';
 
-export default function HomePage() {
-  const [nbaPlayers, setnbaPlayers] = useState([]);
+export default function TeamsPage() {
+  const [nbaTeams, setNBATeams] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [lastPage, setLastPage] = useState(2);
-  const perPage = 50;
+  const perPage = 20;
   const from = currentPage * perPage - perPage;
   const to = currentPage * perPage - 1;
 
   useEffect(() => {
-    async function getPlayers() {
-      const players = await getNBAPlayers(from, to, perPage);
+    async function getTeams() {
+      const players = await getNBATeams(from, to, perPage);
 
-      setnbaPlayers(players.body);
+      setNBATeams(players.body);
       setLastPage(players.lastPage);
     }
 
-    getPlayers();
+    getTeams();
   }, [currentPage]);
     
   return (
     <div>
-      <h1>NBA Players</h1>
+      <h1>NBA Teams</h1>
       {currentPage > 1 && <span className='spanClick' onClick={() => setCurrentPage(currentPage - 1)}> {`<`} </span>}
       <span className='currentPage'>{currentPage}</span>
       {currentPage < lastPage && <span className='spanClick' onClick={() => setCurrentPage(currentPage + 1)}> {`>`} </span>}
-      <PlayerCardList 
-        players={nbaPlayers}
+      <TeamCardList 
+        teams={nbaTeams}
       />
     </div>
   );

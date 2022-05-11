@@ -64,4 +64,62 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
+}
+
+.header {
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #282c34;
+}
+
+.headerItem {
+  margin: 10px 10px 10px 50px;
+  text-decoration: none;
+  color: white;
+  font-size: large;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.spanClick {
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: x-large;
+}
+
+.currentPage {
+  font-weight: bolder;
+  font-size: x-large;
+  margin: 0px 10px;
+}
+
+.playerFact {
+  justify-content: space-between;
+  width: 30%;
+}
+
+.playerFactSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.teamCard {
+  width: 20vw;
+  margin: 20px;
+  padding: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  align-items: center;
+  text-decoration: none;
+}
+
+.teamCard:hover {
+  box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.5);
+  transform: scale(1.1);
 }
