@@ -2,12 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function TeamCard({ team }) {
+  console.log(team.nickname);
+
   return (
     <Link className='teamCard' 
       style={{ backgroundColor: team.primary, color: team.secondary }}
       to={`/team/${team.teamId}`}>
       <img 
-        src={`./public/teams/${team.nickname}.png`}
+        className='teamImage'
+        src={`/teams/${team.nickname}.png`}
       />
       <h1>{team.fullName}</h1>
       <div className='flex-row'>
