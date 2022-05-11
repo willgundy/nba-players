@@ -77,11 +77,11 @@ export default function PlayerDetail() {
           Year Drafted: 
           <h3>{playerDraftInfo.seasonYear}</h3>
         </label>
-        <label className='playerFact flex-row'>
+        {/* <label className='playerFact flex-row'>
           Debut Year: 
           <h3>{playerInfo.nbaPlayerDrafted.yearsPro}</h3>
         </label>
-        <h3>{draftedTeam.fullName}</h3>
+        <h3>{draftedTeam.fullName}</h3> */}
       </div>
     </div>
   );
