@@ -1,13 +1,13 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getSinglePlayer, getSingleTeam } from './services/fetch-utils';
+import { getSinglePlayer } from './services/fetch-utils';
 
 export default function PlayerDetail() {
   const [playerInfo, setPlayerInfo] = useState(false);
   const params = useParams();
   const [playerDraftInfo, setPlayerDraftInfo] = useState({});
-  const [draftedTeam, setDraftedTeam] = useState({});
+  // const [draftedTeam, setDraftedTeam] = useState({});
 
   useEffect(() => {
     async function getPlayer() {
@@ -24,9 +24,9 @@ export default function PlayerDetail() {
 
         setPlayerDraftInfo(jsonBlob);
   
-        const draftedBy = await getSingleTeam(playerDraftInfo.teamId);
+        // const draftedBy = await getSingleTeam(playerDraftInfo.teamId);
   
-        setDraftedTeam(draftedBy);
+        // setDraftedTeam(draftedBy);
       }
     }
     
