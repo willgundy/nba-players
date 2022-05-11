@@ -17,9 +17,6 @@ export default function PlayerDetail() {
     }
 
     async function getJSONData() {
-      console.log('playerInfo', playerInfo);
-
-      console.log('Player Drafted Array', playerInfo.nbaPlayerDrafted);
 
       if (playerInfo.nbaPlayerDrafted) {
 
@@ -35,6 +32,7 @@ export default function PlayerDetail() {
     
     getPlayer();
     getJSONData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params.id]);
 
 
@@ -84,7 +82,7 @@ export default function PlayerDetail() {
           Debut Year: 
           <h3>{playerInfo.nbaPlayerDrafted.yearsPro}</h3>
         </label>
-        {/* <h3>{draftedTeam.fullName}</h3> */}
+        <h3>{draftedTeam.fullName}</h3>
       </div></>}
 
     </div>

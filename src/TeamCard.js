@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function TeamCard({ team }) {
-  console.log(team.nickname);
-
   return (
     <Link className='teamCard' 
       style={{ backgroundColor: team.primary, color: team.secondary }}

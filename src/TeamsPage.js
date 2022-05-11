@@ -20,6 +20,7 @@ export default function TeamsPage() {
     }
 
     getTeams();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage]);
     
   return (
